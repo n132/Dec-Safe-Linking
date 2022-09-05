@@ -1,13 +1,17 @@
 # Dec-Safe-Linking
 
 There are several ways to Decode Safe linking protected value.
-- z3
-- math
+- General Decoder
+  - [z3 Decoder][3]
+  - [math Decoder][4]
+- limitted [Decoder][2] (storer and the value are at the same page, but this is the most useful decoder in real life)
 
-And if the storer is at the same page as the it's fd. there is a very simple [way][1] to decode it.
+# reference
 
-# z3
-
+I wrote the classical decoder according to this [file][1]
 
 
 [1]: https://github.com/shellphish/how2heap/blob/master/glibc_2.35/decrypt_safe_linking.c
+[2]: ./dec_safe_linking.py
+[3]: ./z3_general_decoder.py
+[4]: ./ugly_general_decoder.py
