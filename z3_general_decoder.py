@@ -22,7 +22,26 @@ def XxX(leaked, off, orecal):
     else:
         print(s.check())
         exit(1)
-
-
+def recv_num():
+    data = p.readline()
+    if(data==b"(nil)\n"):
+        return 0
+    return int(data,16)
 if __name__ == "__main__":
-  print(hex(XxX(0x000055500000c7f9,0,0x2a0)))
+    from pwn import *
+    for x in range(0x1000):
+        p = process("./main")
+        
+        leaked = recv_num()
+        off = recv_num()
+        orecal = recv_num()
+        res = XxX(leaked,off,orecal)
+        print(hex(res))
+
+        p.send(p64(res))
+        res = p.read()
+        if b'Success\n' != res:
+            print("???")
+            exit(1)
+        p.close()
+    print("ALL DONE")
