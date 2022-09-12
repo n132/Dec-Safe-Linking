@@ -1,23 +1,23 @@
 # TL;DR
 
-There is a general way to **Recover** Safe linking protected value/pointer as long as we know the page-offset between the storer and the pointer.
+There is a general way to **Recover** Safe linking protected value/pointer as long as we know the page offset between the storer and the pointer.
 
 
-- If you tolerate tiny failure rate(<0.01), check this [solver][6]. This solver only take the leaked data and the page_off as input. It's a general recover!
-- You can find a general decoder [here][3], which needs an additional value to reach 100% success rate.
+- If you tolerate a tiny failure rate(<0.01), check this [solver][6]. It's a general solver. This solver only takes the leaked data and the page_off as inputs.
+- You can find a general decoder [here][3], which needs an additional value to reach a 100% success rate.
 
 
 
-Also I implement the solver with math rather than z3. Check the solver [here][4]
+Also, I implement the solver with math rather than z3. Check the solver [here][4]
 
-Morever, there is a limitted but super useful [Solver][2]. I implemented this according to [how2heap][1].
+Moreover, there is a limited but super useful [Solver][2]. I implemented this according to [how2heap][1].
 
 # Dec-Safe-Linking
 
 There are several ways to **Recover** Safe linking protected value/pointer.
 
 
-In practicing, there are mainly at least three ways to fully recover the encoded pointer.
+In practice, there are mainly at least three ways to fully recover the encoded pointer.
 
 > knowing the address and the stored pointer are on the same page
 > 
@@ -38,11 +38,11 @@ Relation:
 # Explanation
 
 First, let's define these three sets clearly:
-| Set	| Condition 0	| Condition 1	| Condition 2|
+| Set | Condition 0 | Condition 1 | Condition 2|
 |--|--|--|--|
-|Set1	|Encoded Leaked Data	|PAGE_OFF == 0|-|
-|Set2	|Encoded Leaked Data	|PAGE_OFF|-|
-|Set3	|Encoded Leaked Data	|Address's OFFSET to HEAPBASE| Value's OFFSET to HEAPBASE
+|Set1 |Encoded Leaked Data  |PAGE_OFF == 0|-|
+|Set2 |Encoded Leaked Data  |PAGE_OFF|-|
+|Set3 |Encoded Leaked Data  |Address's OFFSET to HEAPBASE| Value's OFFSET to HEAPBASE
 
 
 It's easy to find:
