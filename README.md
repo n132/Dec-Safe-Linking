@@ -1,9 +1,11 @@
 # TL;DR
 
-There is a general way to **Recover** Safe linking protected value/pointer.
+There is a general way to **Recover** Safe linking protected value/pointer as long as we know the page-offset between the storer and the pointer.
 
-- You can find a general decoder [here][3].
-- If you can tolerant the tiny failure rate(<0.01), check this [solver][6]. This solver only take the leaked data and the page_off as input. It's a general recover!
+
+- If you tolerate tiny failure rate(<0.01), check this [solver][6]. This solver only take the leaked data and the page_off as input. It's a general recover!
+- You can find a general decoder [here][3], which needs an additional value to reach 100% success rate.
+
 
 
 Also I implement the solver with math rather than z3. Check the solver [here][4]
@@ -61,9 +63,16 @@ Assume there is a function solver(leaked, Pageoff) which could solve cases for s
 - How2Heap's [Solver][1]
 - [Safe-linking][5]
 
+# Thanks
+
+[Kely][7]
+[CSAW][8]
+
 [1]: https://github.com/shellphish/how2heap/blob/master/glibc_2.35/decrypt_safe_linking.c
 [2]: ./dec_safe_linking.py
 [3]: ./z3_general_decoder.py
 [4]: ./ugly_general_decoder.py
 [5]: https://research.checkpoint.com/2020/safe-linking-eliminating-a-20-year-old-malloc-exploit-primitive/
 [6]: ./0racle/
+[7]: https://github.com/Kyle-Kyle
+[8]: https://www.csaw.io/
