@@ -69,9 +69,9 @@ Assume there is a function solver(leaked, Pageoff) which could solve cases for s
 - [CSAW][8]
 
 [1]: https://github.com/shellphish/how2heap/blob/master/glibc_2.35/decrypt_safe_linking.c
-[2]: ./dec_safe_linking.py
-[3]: ./z3_general_decoder.py
-[4]: ./ugly_general_decoder.py
+[2]: ./sol.py
+[3]: ./z3_gen_sol.py
+[4]: ./gen_sol.py
 [5]: https://research.checkpoint.com/2020/safe-linking-eliminating-a-20-year-old-malloc-exploit-primitive/
 [6]: ./0racle/
 [7]: https://github.com/Kyle-Kyle
