@@ -1,3 +1,14 @@
+# TL;DR
+
+There is a general way to **Recover** Safe linking protected value/pointer.
+
+- You can find a general decoder [here][3].
+- If you can tolerant the tiny failure rate(<0.01), check this [solver][6]. This solver only take the leaked data and the page_off as input. It's a general recover!
+
+
+Also I implement the solver with math rather than z3. Check the solver [here][4]
+
+Morever, there is a limitted but super useful [Solver][2]. I implemented this according to [how2heap][1].
 
 # Dec-Safe-Linking
 
@@ -13,9 +24,6 @@ In practicing, there are mainly at least three ways to fully recover the encoded
 > knowing the address's and the pointer's offset to the heap base
 > 
 > (This summary comes from Kyle-Kyle)
-
-
-# TL;DR
 
 According to these three ways, I think
 these three sets have the following relation and the solver of set2 is the strongest cuz it can solve cases for all three sets.
@@ -48,19 +56,14 @@ Assume there is a function solver(leaked, Pageoff) which could solve cases for s
 - For set3, solver(leaked,(v1-v2)>>12)
 
 
-# Solvers
-
-- General Decoder
-  - [z3 Decoder][3]
-  - [math Decoder][4]
-- limitted [Decoder][2] (storer and the value are at the same page, but this is the most useful decoder in real life)
-
 # Reference
 
-I wrote the classical decoder according to this [file][1]
-
+- How2Heap's [Solver][1]
+- [Safe-linking][5]
 
 [1]: https://github.com/shellphish/how2heap/blob/master/glibc_2.35/decrypt_safe_linking.c
 [2]: ./dec_safe_linking.py
 [3]: ./z3_general_decoder.py
 [4]: ./ugly_general_decoder.py
+[5]: https://research.checkpoint.com/2020/safe-linking-eliminating-a-20-year-old-malloc-exploit-primitive/
+[6]: ./0racle/
