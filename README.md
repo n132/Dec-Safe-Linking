@@ -7,8 +7,9 @@ There are several ways to **Recover** Safe linking protected value/pointer.
 In practicing, there are mainly at least three ways to fully recover the encoded pointer.
 
 > knowing the address and the stored pointer are on the same page
-knowing the offset between the address and the stored pointer
-knowing the address's and the pointer's offset to the heap base
+> knowing the offset between the address and the stored pointer
+> knowing the address's and the pointer's offset to the heap base
+> (This summary comes from Kyle-Kyle)
 
 
 # TL;DR
