@@ -65,7 +65,7 @@ Assume there is a function solver(leaked, Pageoff) which could solve cases for s
 
 # Thanks
 
-- [Kely][7]
+- [Kyle][7]
 - [CSAW][8]
 
 [1]: https://github.com/shellphish/how2heap/blob/master/glibc_2.35/decrypt_safe_linking.c
