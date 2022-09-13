@@ -3,12 +3,12 @@
 There is a general way to **Recover** Safe linking protected value/pointer as long as we know the page offset between the storer and the pointer.
 
 
-- If you tolerate a tiny failure rate(<0.01), check this [solver][6]. It's a general solver. This solver only takes the leaked data and the page_off as inputs.
+- If you can tolerate a tiny failure rate(<0.01), check this [solver][6]. It's a general solver. This solver only takes the leaked data and the page_off as inputs.
 - You can find a general decoder [here][3], which needs an additional value to reach a 100% success rate.
 
 
 
-Also, I implement the solver with math rather than z3. Check the solver [here][4]
+Also, I implemented the solver with math rather than z3. Check the solver [here][4]
 
 Moreover, there is a limited but super useful [Solver][2]. I implemented this according to [how2heap][1].
 
