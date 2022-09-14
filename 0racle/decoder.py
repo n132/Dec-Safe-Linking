@@ -32,7 +32,6 @@ if __name__ == "__main__":
         p = process("./main")
         leaked = recv_num()
         off = recv_num()
-        # orecal = recv_num()
         res = XxX(leaked,off)
         print(hex(res))
 
