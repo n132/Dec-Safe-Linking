@@ -56,7 +56,9 @@ Assume there is a function solver(leaked, Pageoff) which could solve cases for s
 
 - For set1, solver(leaked,0)
 - For set3, solver(leaked,(v1-v2)>>12)
+# CTF challenge
 
+Based on this mythod, I wrote a [challenge][9] for CSAW-22 Qual. 
 
 # Reference
 
@@ -76,3 +78,4 @@ Assume there is a function solver(leaked, Pageoff) which could solve cases for s
 [6]: ./0racle/
 [7]: https://github.com/Kyle-Kyle
 [8]: https://www.csaw.io/
+[9]: https://github.com/n132/CTF-Challenges/tree/main/n132_Challenges/CSAW-2022-Qual/unsafe-linking
